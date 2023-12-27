@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@layer base {
+  body {
+    /* Basic colors for text and background */
+    @apply text-primary bg-gray-100;
+  }
+}
+
+@layer components {
+  .max-w-container {
+    /* Used for full-page components like banners and menus, this defines the maximum width of such elements */
+    @apply max-w-7xl mx-auto;
+  }
+
+  .button-shadow {
+    box-shadow: 4px 4px 0 0 #B86C00;
+  }
+}
