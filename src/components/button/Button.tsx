@@ -22,10 +22,10 @@ export const Button = ({
   const memoizedClasses = useMemo(
     () =>
       classNames(
-        "rounded font-bold h-full min-h-[36px] justify-center text-center text-ellipsis overflow-hidden text-white",
+        "rounded-lg font-bold h-full min-h-[2rem] justify-center text-center text-ellipsis overflow-hidden text-white transition",
         buttonSizes(size),
         block ? "w-full " : "inline-block max-w-[15rem] ",
-        (disabled || loading ? "bg-yellow-300" : "bg-yellow-700 button-shadow"),
+        (disabled || loading ? "bg-yellow-300" : "bg-yellow-700 button-shadow hover:bg-yellow-800"),
         extraClasses,
       ),
     [type, size, block, disabled, extraClasses, loading],

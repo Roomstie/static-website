@@ -1,6 +1,6 @@
 import { ErrorPage } from "components/error";
 import { URLS } from "config";
-import { HomePage } from "pages/home";
+import { FaqPage, HomePage, PricingPage, TeamPage } from "pages";
 import { LandingPage } from "pages/LandingPage";
 import { NOT_FOUND_ROUTE } from "pages/NOT_FOUND";
 import { createBrowserRouter, Outlet, RouteObject } from "react-router-dom";
@@ -20,6 +20,21 @@ export const ROUTE_TREE = createBrowserRouter(([
             path: URLS.homepage,
             element: <HomePage />,
             handle: { title: "" },
+          },
+          {
+            path: URLS.faq,
+            element: <FaqPage />,
+            handle: { title: "FAQ" },
+          },
+          {
+            path: URLS.team,
+            element: <TeamPage />,
+            handle: { title: "Team" },
+          },
+          {
+            path: URLS.pricing,
+            element: <PricingPage />,
+            handle: { title: "Pricing" },
           },
         ],
       },

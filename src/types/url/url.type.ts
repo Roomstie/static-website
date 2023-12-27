@@ -1,3 +1,4 @@
 import { URLS } from "config";
 
-export type IUrlPath = (keyof typeof URLS);
+export type IUrlPathKey = (keyof typeof URLS);
+export type IUrlPath = (typeof URLS)[IUrlPathKey];

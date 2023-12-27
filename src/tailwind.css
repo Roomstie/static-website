@@ -2,31 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 @layer base {
+  @font-face {
+    font-family: "Nirmala UI";
+    font-style: normal;
+    /* font-weight: 100 1000; */
+    /* font-stretch: 0% 200%; */
+    src: url('./assets/fonts/nirmala-ui.eot'); /* IE9 Compat Modes */
+    src: url('./assets/fonts/nirmala-ui.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./assets/fonts/nirmala-ui.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./assets/fonts/nirmala-ui.woff') format('woff'), /* Pretty Modern Browsers */
+         url('./assets/fonts/nirmala-ui.ttf')  format('truetype'); /* Safari, Android, iOS */
+    /* font-weight: normal; */
+    /* font-style: normal; */
+  }
+
   body {
     /* Basic colors for text and background */
     @apply text-primary bg-gray-100;
+    margin: 0;
+    font-family: 'Nirmala UI', 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
 }
 
 @layer components {
+  a[rel], a[target] {
+    @apply text-blue-300 hover:underline
+  }
   .max-w-container {
     /* Used for full-page components like banners and menus, this defines the maximum width of such elements */
     @apply max-w-7xl mx-auto;
+  }
+
+  .landing-spacing {
+    @apply py-16;
   }
 
   .button-shadow {

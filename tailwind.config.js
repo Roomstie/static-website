@@ -28,6 +28,7 @@ const roomstieYellow = {
   300: "#ffc993",
   500: "#ffae5d",
   700: "#f7941d",
+  800: "#E68600",
   900: "#B86C00",
 };
 
@@ -48,6 +49,7 @@ module.exports = {
       gray: {
         100: "#F2F7F2",
         200: "#EFEFEF",
+        800: "#999999",
       },
 
       blue: roomstieBlue,

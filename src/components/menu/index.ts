@@ -1,1 +1,1 @@
-export * from "./HomepageMenu";
+export * from "./LandingMenu";
