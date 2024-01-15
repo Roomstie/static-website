@@ -2,7 +2,7 @@
   "name": "roomstie",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/",
+  "homepage": "http://roomstie.com/",
   "scripts": {
     "pre-start": "npm i",
     "build": "react-scripts build",
