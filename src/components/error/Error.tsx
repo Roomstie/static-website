@@ -26,7 +26,7 @@ export const ErrorPage = ({ error, type }: ErrorPageProps): JSX.Element => {
   const _errorMessage: string = routeError?.statusText ?? routeError?.message ?? "";
 
   return (
-    <div id="error-page" className="flex flex-col h-full">
+    <div id="error-page" className="flex flex-col h-full justify-center items-center min-h-40">
       <h1 className="text-4xl">
         {type === "404" && "404 NOT FOUND"}
         {type === "error" && "Error ocurred"}

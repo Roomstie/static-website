@@ -42,4 +42,4 @@ export const ROUTE_TREE = createBrowserRouter(([
       NOT_FOUND_ROUTE,
     ],
   },
-] satisfies IRoute[]) as RouteObject[]);
+] satisfies IRoute[]) as RouteObject[], { basename: "/static-website" });

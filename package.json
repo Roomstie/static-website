@@ -2,7 +2,7 @@
   "name": "roomstie",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://roomstie.github.io/static-website",
+  "homepage": "/static-website",
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
