@@ -23,7 +23,6 @@ export const Countdown = ({
   targetDate,
   onEnd,
   className: extraClasses = "",
-//   size = "md",
 }: ICountdownProps): JSX.Element => {
   const [timeLeft, setTimeLeft] = useState<ICountdownClock | null>(calculateTimeLeft(targetDate));
 
@@ -53,7 +52,7 @@ export const Countdown = ({
       <img
         src={logoSquare.default}
         alt="Main Logo"
-        style={{ height: "300px" }}
+        className="h-72 hover:scale-90" // Smaller on mobile, larger on desktop
       />
 
       <img
@@ -62,39 +61,41 @@ export const Countdown = ({
         style={{ height: "200px", marginTop: "-100px" }}
       />
 
-      {
-        timeLeft
-          ? (
-            <div className="flex flex-row space-x-4">
-              {/* "Coming Soon!" box */}
-              <span
-                className="flex flex-col space-y-2 bg-main-purple text-white rounded-xl min-h-24 p-2 justify-center items-center w-52" // Using a Tailwind width class
-              >
-                <span className="text-2xl font-sans font-bold">
-                  Website live in
-                </span>
-              </span>
+      <div className="w-full scale-50 sm:scale-100">
+        <div className="flex flex-row justify-center gap-4">
+          {/* "Website live in:" box */}
+          <span
+            className="flex flex-col bg-main-purple text-white rounded-xl p-2 justify-center items-center w-52"
+          >
+            <span className="text-2xl font-sans font-bold">
+              Website live in:
+            </span>
+          </span>
 
-              {/* Countdown timer */}
-              {
-                (Object.keys(timeLeft) as Array<keyof ICountdownClock>).map(interval =>
-                  <span
-                    key={interval}
-                    className="flex flex-col space-y-2 bg-main-purple text-white rounded-xl min-w-24 min-h-24 p-2"
-                  >
-                    <span className="text-4xl font-sans font-bold">
-                      {paddedZero(timeLeft[interval])}
-                    </span>
-                    <span className="text-xl">
-                      {interval}
-                    </span>
-                  </span>,
+          {/* Countdown timer */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {
+              timeLeft
+                ? (
+                  (Object.keys(timeLeft) as Array<keyof ICountdownClock>).map(interval =>
+                    <span
+                      key={interval}
+                      className="flex flex-col bg-main-purple text-white rounded-xl p-2 w-24 h-24"
+                    >
+                      <span className="text-4xl font-sans font-bold">
+                        {paddedZero(timeLeft[interval])}
+                      </span>
+                      <span className="text-xl">
+                        {interval}
+                      </span>
+                    </span>,
+                  )
                 )
-              }
-            </div>
-          )
-          : <span>Time&apos;s up!</span>
-      }
+                : <span>Time&apos;s up!</span>
+            }
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

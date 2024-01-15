@@ -42,9 +42,9 @@ module.exports = {
       },
       colors:
         {
-           "main-purple": "#780095",
-           "main-orange": "#F6931D"
-        }
+          "main-purple": "#780095",
+          "main-orange": "#F6931D",
+        },
     },
     colors: {
       black: colors.black,

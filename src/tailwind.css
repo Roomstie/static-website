@@ -35,6 +35,15 @@
 
 }
 
+@media (max-width: 640px) { /* Tailwind's 'sm' breakpoint */
+    .responsive-text {
+      font-size: 1rem; /* Smaller font size on small screens */
+    }
+    .responsive-clock {
+      min-width: 12rem; /* Smaller min-width for clock elements */
+    }
+  }
+
 @layer components {
   a[rel], a[target] {
     @apply text-blue-300 hover:underline
@@ -50,6 +59,10 @@
 
   .button-shadow {
     box-shadow: 4px 4px 0 0 #B86C00;
+  }
+
+  .shrink-50 {
+    width:50%
   }
 }
 
