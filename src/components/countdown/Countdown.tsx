@@ -52,7 +52,7 @@ export const Countdown = ({
       <img
         src={logoSquare.default}
         alt="Main Logo"
-        className="h-72 hover:scale-90" // Smaller on mobile, larger on desktop
+        className="h-72 sm:hover:scale-90" // Smaller on mobile, larger on desktop
       />
 
       <img
@@ -61,8 +61,8 @@ export const Countdown = ({
         style={{ height: "200px", marginTop: "-100px" }}
       />
 
-      <div className="w-full scale-50 sm:scale-100">
-        <div className="flex flex-row justify-center gap-4">
+      <div className="w-full mobile-scale">
+        <div className="flex flex-row justify-center gap-2 sm:gap-4">
           {/* "Website live in:" box */}
           <span
             className="flex flex-col bg-main-purple text-white rounded-xl p-2 justify-center items-center w-52"
@@ -80,7 +80,7 @@ export const Countdown = ({
                   (Object.keys(timeLeft) as Array<keyof ICountdownClock>).map(interval =>
                     <span
                       key={interval}
-                      className="flex flex-col bg-main-purple text-white rounded-xl p-2 w-24 h-24"
+                      className="flex flex-col bg-main-purple text-white rounded-xl p-2 w-24 h-24 hover:scale-90"
                     >
                       <span className="text-4xl font-sans font-bold">
                         {paddedZero(timeLeft[interval])}
