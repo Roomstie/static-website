@@ -1,22 +1,26 @@
 export const URLS = {
   /**
-   * The "main" page of the application.
+   * The "main" page of the application. Make it coincide with a route below
    */
-  root: "/",
+  __root__: "/",
   /**
    * The homepage. At the moment, it coincides with the root page
    */
-  homepage: "/",
+  countdown: "/",
+  /**
+   * The homepage.
+   */
+  home: "/home",
   /**
    * Frequently asked questions
    */
-  faq: "/faq",
+  faq: "/home/faq",
   /**
    * Team page
    */
-  team: "/about-us",
+  team: "/home/about-us",
   /**
    * Page where we show the prices
    */
-  pricing: "/pricing",
+  pricing: "/home/pricing",
 } as const;

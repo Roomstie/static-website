@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { Link } from "react-router-dom";
 import { IClassName, IMenuLink } from "types";
 
@@ -9,10 +10,14 @@ interface MenuLinkProps extends IClassName {
  * Keep this component unstyled, so it can be used by different components!
  */
 export const MenuLink = ({ link, className = "" }: MenuLinkProps): JSX.Element => {
+  const classes = classNames(
+    className,
+    { "pointer-events-none": link.disabled },
+  );
   if (typeof link.target === "string") {
     return (
       <a
-        className={className}
+        className={classes}
         href={`#${link.target || " "}`}
       >
         <span>{link.label}</span>
@@ -21,7 +26,7 @@ export const MenuLink = ({ link, className = "" }: MenuLinkProps): JSX.Element =
   } else if (typeof link.url === "string") {
     return (
       <a
-        className={className}
+        className={classes}
         href={link.url}
         rel="noreferrer"
         target="_blank"
@@ -33,7 +38,7 @@ export const MenuLink = ({ link, className = "" }: MenuLinkProps): JSX.Element =
   } else {
     return (
       <Link
-        className={className}
+        className={classes}
         to={(link.path ?? link.customPath) /* We know it's a valid string */}
       >
         <span>{link.label}</span>

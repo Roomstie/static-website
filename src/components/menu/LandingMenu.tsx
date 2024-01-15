@@ -1,18 +1,23 @@
 import { logoWithText } from "assets";
-import { HOMEPAGE_MENU_LINKS, URLS } from "config";
+import { URLS } from "config";
 import { Link } from "react-router-dom";
+import { IMenuLink } from "types";
 
 import { MenuLink } from "./MenuLink";
 
-export const LandingMenu = (): JSX.Element => {
+interface ILandingMenuProps {
+  menuLinks: Readonly<IMenuLink[]>;
+}
+
+export const LandingMenu = ({ menuLinks }: ILandingMenuProps): JSX.Element => {
   return (
     <div className="flex flex-row justify-between max-w-container mt-6">
-      <Link to={URLS.root} className="flex items-center">
+      <Link to={URLS.__root__} className="flex items-center">
         <img src={logoWithText.default} alt="Roomstie Logo" className="h-12" />
       </Link>
       <div className="flex flex-row justify-evenly">
         {
-          HOMEPAGE_MENU_LINKS.map(l => (
+          menuLinks.map(l => (
             <MenuLink
               key={l.label}
               link={l}
