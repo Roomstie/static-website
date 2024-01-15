@@ -31,7 +31,7 @@ export const LandingPage = (): JSX.Element => {
       </main>
 
       {/* Footer */}
-      <LandingFooter />
+      {/* <LandingFooter /> */}
     </div>
   );
 };

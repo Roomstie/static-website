@@ -1,5 +1,6 @@
+import { Countdown } from "components/countdown";
 import { ErrorPage } from "components/error";
-import { URLS } from "config";
+import { LIVE_DATE, URLS } from "config";
 import { FaqPage, HomePage, PricingPage, TeamPage } from "pages";
 import { LandingPage } from "pages/LandingPage";
 import { NOT_FOUND_ROUTE } from "pages/NOT_FOUND";
@@ -18,7 +19,7 @@ export const ROUTE_TREE = createBrowserRouter(([
         children: [
           {
             path: URLS.homepage,
-            element: <HomePage />,
+            element: <Countdown targetDate={LIVE_DATE} />,
             handle: { title: "" },
           },
           {
