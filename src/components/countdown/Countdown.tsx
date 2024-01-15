@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useMemo } from "react";
 import classNames from "classnames";
-import { ICountdownClock, ICountdownProps } from 'types';
 import { paddedZero } from "functions";
+import { useEffect, useState } from "react";
+import { ICountdownClock, ICountdownProps } from "types";
 
-const calculateTimeLeft = (targetDate: Date):  ICountdownClock | null => {
+const calculateTimeLeft = (targetDate: Date): ICountdownClock | null => {
   const difference = +targetDate - +new Date();
-  let timeLeft = {};
 
   if (difference > 0) {
     return {
@@ -15,7 +14,7 @@ const calculateTimeLeft = (targetDate: Date):  ICountdownClock | null => {
       seconds: Math.floor((difference / 1000) % 60),
     };
   } else {
-    return null
+    return null;
   }
 };
 
@@ -25,44 +24,56 @@ export const Countdown = ({
   className: extraClasses = "",
   size = "md",
 }: ICountdownProps): JSX.Element => {
-
-  const [timeLeft, setTimeLeft] = useState<ICountdownClock | null>(null);
+  const [timeLeft, setTimeLeft] = useState<ICountdownClock | null>(calculateTimeLeft(targetDate));
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft(targetDate));
+    const interval = setInterval(() => {
+      const timerTimeLeft = calculateTimeLeft(targetDate);
+      // if there's still time
+      if (timerTimeLeft) {
+        setTimeLeft(timerTimeLeft);
+      } else {
+        // Timer is over. Clear the timeout
+        clearTimeout(interval);
+        // Notify end of time
+        onEnd?.();
+      }
     }, 1000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(interval);
   }, []);
 
-  const memoizedClasses = useMemo(
-    () =>
-      classNames(
+  return (
+    <div
+      className={classNames(
         // Add your base classes for the countdown timer here
-        "rounded-lg font-bold justify-center text-center overflow-hidden transition",
+        "rounded-lg font-bold justify-center text-center overflow-hidden transition flex items-center",
         // Add a function to determine the size similar to buttonSizes if needed
         extraClasses,
-      ),
-    [size, extraClasses],
-  );
-
-  return (
-    <div className={memoizedClasses}>
+      )}
+    >
       {
-      timeLeft 
-        ? (
-          <div>
-            {
-              (Object.keys(timeLeft) as Array<keyof ICountdownClock>).map(interval =>
-                <span key={interval} className="text-2xl font-bold mx-1">
-                  {paddedZero(timeLeft[interval])} {interval}
-                </span>
-              )
-            }
-          </div>
-        )
-        : <span>Time's up!</span>
+        timeLeft
+          ? (
+            <div className="flex flex-row space-x-4">
+              {
+                (Object.keys(timeLeft) as Array<keyof ICountdownClock>).map(interval =>
+                  <span
+                    key={interval}
+                    className="flex flex-col space-y-2 bg-red-500 text-white border border-red-700 rounded-xl min-w-24 min-h-24 p-2"
+                  >
+                    <span className="text-4xl font-bold">
+                      {paddedZero(timeLeft[interval])}
+                    </span>
+                    <span className="text-xl">
+                      {interval}
+                    </span>
+                  </span>,
+                )
+              }
+            </div>
+          )
+          : <span>Time&apos;s up!</span>
       }
     </div>
   );

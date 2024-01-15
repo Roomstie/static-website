@@ -1,4 +1,3 @@
-import { LandingFooter } from "components/footer";
 import { LandingMenu } from "components/menu";
 import { setTitleFromUrlMatches } from "functions";
 import { useEffect } from "react";

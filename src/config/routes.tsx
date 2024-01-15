@@ -1,7 +1,7 @@
 import { Countdown } from "components/countdown";
 import { ErrorPage } from "components/error";
 import { LIVE_DATE, URLS } from "config";
-import { FaqPage, HomePage, PricingPage, TeamPage } from "pages";
+import { FaqPage, PricingPage, TeamPage } from "pages";
 import { LandingPage } from "pages/LandingPage";
 import { NOT_FOUND_ROUTE } from "pages/NOT_FOUND";
 import { createBrowserRouter, Outlet, RouteObject } from "react-router-dom";

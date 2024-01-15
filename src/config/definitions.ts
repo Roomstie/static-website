@@ -13,7 +13,7 @@ export const HOMEPAGE_MENU_LINKS: Readonly<IMenuLink[]> = [
   // { path: URLS.team, label: "Meet the team" },
   // { path: URLS.pricing, label: "Pricing" },
   // { target: TARGET_JOBS, label: "We're hiring!" },
-  { target: "#", label: "Coming soon"}
+  { target: "#", label: "Coming soon" },
 ] as const;
 
 export const FOOTER_LINKS: Readonly<IFooterLink[]> = [
