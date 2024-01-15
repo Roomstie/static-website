@@ -10,7 +10,9 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "eslint --ext .tsx,.ts ./src --max-warnings=0",
+    "fmt": "npm run lint --fix"
   },
   "browserslist": {
     "production": [

@@ -1,1 +1,1 @@
-export * from "./url.type"
+export * from "./url.type";
