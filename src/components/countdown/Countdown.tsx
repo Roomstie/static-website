@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { logoSquare } from "assets";
 import { paddedZero } from "functions";
 import { useEffect, useState } from "react";
 import { ICountdownClock, ICountdownProps } from "types";
@@ -46,12 +47,21 @@ export const Countdown = ({
   return (
     <div
       className={classNames(
+        "flex flex-col items-center justify-center", // one column, center aligned
+        "pt-20",
         // Add your base classes for the countdown timer here
-        "rounded-lg font-bold justify-center text-center overflow-hidden transition flex items-center",
+        "rounded-lg font-sans justify-center text-center overflow-hidden transition flex items-center",
         // Add a function to determine the size similar to buttonSizes if needed
         extraClasses,
       )}
     >
+    
+      <img
+        src={logoSquare.default}
+        alt="Main Logo"
+        style={{ width: "300px" }}
+      /> {/* Logo image with bottom margin */}
+
       {
         timeLeft
           ? (
@@ -60,9 +70,9 @@ export const Countdown = ({
                 (Object.keys(timeLeft) as Array<keyof ICountdownClock>).map(interval =>
                   <span
                     key={interval}
-                    className="flex flex-col space-y-2 bg-red-500 text-white border border-red-700 rounded-xl min-w-24 min-h-24 p-2"
+                    className="flex flex-col space-y-2 bg-main-purple text-white rounded-xl min-w-24 min-h-24 p-2"
                   >
-                    <span className="text-4xl font-bold">
+                    <span className="text-4xl font-sans font-bold">
                       {paddedZero(timeLeft[interval])}
                     </span>
                     <span className="text-xl">

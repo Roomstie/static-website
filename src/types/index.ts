@@ -5,4 +5,4 @@ export * from "./button";
 export * from "./generic";
 export * from "./faq";
 export * from "./team";
-export * from "./coundown";
+export * from "./countdown";
