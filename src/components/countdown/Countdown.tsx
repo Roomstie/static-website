@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { logoSquare } from "assets";
+import { logoSquare, logoLetters } from "assets";
 import { paddedZero } from "functions";
 import { useEffect, useState } from "react";
 import { ICountdownClock, ICountdownProps } from "types";
@@ -48,7 +48,7 @@ export const Countdown = ({
     <div
       className={classNames(
         "flex flex-col items-center justify-center", // one column, center aligned
-        "pt-20",
+        "pt-10",
         // Add your base classes for the countdown timer here
         "rounded-lg font-sans justify-center text-center overflow-hidden transition flex items-center",
         // Add a function to determine the size similar to buttonSizes if needed
@@ -59,8 +59,15 @@ export const Countdown = ({
       <img
         src={logoSquare.default}
         alt="Main Logo"
-        style={{ width: "300px" }}
+        style={{ height: "300px" }}
       /> {/* Logo image with bottom margin */}
+
+      <img
+        src={logoLetters.default}
+        alt="Letters Logo"
+        style={{ height: "200px", marginTop: '-100px' }}
+        
+      /> 
 
       {
         timeLeft
