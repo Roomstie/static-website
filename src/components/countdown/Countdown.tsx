@@ -1,5 +1,7 @@
 import classNames from "classnames";
 import { logoSquare, logoLetters } from "assets";
+// import { logoSquare } from "assets";
+import classNames from "classnames";
 import { paddedZero } from "functions";
 import { useEffect, useState } from "react";
 import { ICountdownClock, ICountdownProps } from "types";
@@ -55,7 +57,7 @@ export const Countdown = ({
         extraClasses,
       )}
     >
-    
+
       <img
         src={logoSquare.default}
         alt="Main Logo"

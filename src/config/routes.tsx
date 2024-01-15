@@ -1,6 +1,6 @@
 import { Countdown } from "components/countdown";
 import { ErrorPage } from "components/error";
-import { LIVE_DATE, URLS } from "config";
+import { COUNTDOWN_MENU_LINKS, LIVE_DATE, URLS } from "config";
 import { FaqPage, HomePage, PricingPage, TeamPage } from "pages";
 import { LandingPage } from "pages/LandingPage";
 import { NOT_FOUND_ROUTE } from "pages/NOT_FOUND";
@@ -10,7 +10,7 @@ import { IRoute } from "types";
 export const ROUTE_TREE = createBrowserRouter(([
   {
     path: URLS.__root__,
-    element: <LandingPage.Simple />,
+    element: <LandingPage menuLinks={COUNTDOWN_MENU_LINKS} />,
     children: [
       {
         path: URLS.countdown,
