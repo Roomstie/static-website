@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static-website/static/css/main.fc0cba8e.css",
-    "main.js": "/static-website/static/js/main.a436825e.js",
-    "static/js/787.0afe53d7.chunk.js": "/static-website/static/js/787.0afe53d7.chunk.js",
-    "static/media/homepage-1.svg": "/static-website/static/media/homepage-1.b8914e0a9e0378900a89a461d508a17e.svg",
-    "static/media/nirmala-ui.eot": "/static-website/static/media/nirmala-ui.1c80b0a9ec15ce819533.eot",
-    "static/media/nirmala-ui.ttf": "/static-website/static/media/nirmala-ui.546d7f26e1aed62c3988.ttf",
-    "static/media/homepage-connection.svg": "/static-website/static/media/homepage-connection.73906e0fa98bd4eab3726879a2cda041.svg",
-    "static/media/nirmala-ui.woff": "/static-website/static/media/nirmala-ui.b4d59a32e3d7e88ffc27.woff",
-    "static/media/nirmala-ui.woff2": "/static-website/static/media/nirmala-ui.66fb940a5c9917e6c946.woff2",
-    "static/media/nico.jpg": "/static-website/static/media/nico.cdcfb7afc1ac7a3cbd97.jpg",
-    "static/media/logo-text.svg": "/static-website/static/media/logo-text.08e6b2a2a454a3fc6fdbd82da9baa36a.svg",
-    "static/media/ai-machine.svg": "/static-website/static/media/ai-machine.3c1c7a4742e626d95ba6fa3966ce8c73.svg",
-    "static/media/ai-house.svg": "/static-website/static/media/ai-house.0cd588c600169889eec4926b1896caf3.svg",
-    "index.html": "/static-website/index.html",
-    "static/media/caret-right.svg": "/static-website/static/media/caret-right.5d42854c5d203a94c5fffff852eb201c.svg",
-    "main.fc0cba8e.css.map": "/static-website/static/css/main.fc0cba8e.css.map",
-    "main.a436825e.js.map": "/static-website/static/js/main.a436825e.js.map",
-    "787.0afe53d7.chunk.js.map": "/static-website/static/js/787.0afe53d7.chunk.js.map"
+    "main.css": "/static/css/main.b4a7c8ba.css",
+    "main.js": "/static/js/main.b89d8285.js",
+    "static/js/787.0afe53d7.chunk.js": "/static/js/787.0afe53d7.chunk.js",
+    "static/media/homepage-1.svg": "/static/media/homepage-1.b8914e0a9e0378900a89a461d508a17e.svg",
+    "static/media/nirmala-ui.eot": "/static/media/nirmala-ui.1c80b0a9ec15ce819533.eot",
+    "static/media/nirmala-ui.ttf": "/static/media/nirmala-ui.546d7f26e1aed62c3988.ttf",
+    "static/media/homepage-connection.svg": "/static/media/homepage-connection.73906e0fa98bd4eab3726879a2cda041.svg",
+    "static/media/nirmala-ui.woff": "/static/media/nirmala-ui.b4d59a32e3d7e88ffc27.woff",
+    "static/media/nirmala-ui.woff2": "/static/media/nirmala-ui.66fb940a5c9917e6c946.woff2",
+    "static/media/nico.jpg": "/static/media/nico.cdcfb7afc1ac7a3cbd97.jpg",
+    "static/media/logo-text.svg": "/static/media/logo-text.08e6b2a2a454a3fc6fdbd82da9baa36a.svg",
+    "static/media/ai-machine.svg": "/static/media/ai-machine.3c1c7a4742e626d95ba6fa3966ce8c73.svg",
+    "static/media/ai-house.svg": "/static/media/ai-house.0cd588c600169889eec4926b1896caf3.svg",
+    "index.html": "/index.html",
+    "static/media/caret-right.svg": "/static/media/caret-right.5d42854c5d203a94c5fffff852eb201c.svg",
+    "main.b4a7c8ba.css.map": "/static/css/main.b4a7c8ba.css.map",
+    "main.b89d8285.js.map": "/static/js/main.b89d8285.js.map",
+    "787.0afe53d7.chunk.js.map": "/static/js/787.0afe53d7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc0cba8e.css",
-    "static/js/main.a436825e.js"
+    "static/css/main.b4a7c8ba.css",
+    "static/js/main.b89d8285.js"
   ]
 }
