@@ -1,5 +1,5 @@
+import { logoLetters, logoSquare } from "assets";
 import classNames from "classnames";
-import { logoSquare, logoLetters } from "assets";
 import { paddedZero } from "functions";
 import { useEffect, useState } from "react";
 import { ICountdownClock, ICountdownProps } from "types";
@@ -23,7 +23,7 @@ export const Countdown = ({
   targetDate,
   onEnd,
   className: extraClasses = "",
-  size = "md",
+//   size = "md",
 }: ICountdownProps): JSX.Element => {
   const [timeLeft, setTimeLeft] = useState<ICountdownClock | null>(calculateTimeLeft(targetDate));
 
@@ -59,9 +59,8 @@ export const Countdown = ({
       <img
         src={logoLetters.default}
         alt="Letters Logo"
-        style={{ height: "200px", marginTop: '-100px' }}
+        style={{ height: "200px", marginTop: "-100px" }}
       />
-
 
       {
         timeLeft
@@ -89,7 +88,7 @@ export const Countdown = ({
                     <span className="text-xl">
                       {interval}
                     </span>
-                  </span>
+                  </span>,
                 )
               }
             </div>
