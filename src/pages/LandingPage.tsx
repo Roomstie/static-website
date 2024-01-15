@@ -1,10 +1,12 @@
+import { LandingFooter } from "components/footer";
 import { LandingMenu } from "components/menu";
+import { FOOTER_LINKS, HOMEPAGE_MENU_LINKS } from "config";
 import { setTitleFromUrlMatches } from "functions";
 import { useEffect } from "react";
 import { Outlet, RouteObject, useMatches } from "react-router-dom";
-import { IRoute } from "types";
+import { ILandingPageProps, IRoute } from "types";
 
-export const LandingPage = (): JSX.Element => {
+export const LandingPage = ({ menuLinks: headerLinks, footerLinks }: ILandingPageProps): JSX.Element => {
   const matches: IRoute[] = useMatches() as IRoute[];
 
   /**
@@ -21,16 +23,30 @@ export const LandingPage = (): JSX.Element => {
 
   return (
     <div>
-      {/* Header/Menu */}
-      <LandingMenu />
+      {
+        /* Header/Menu */
+        headerLinks && <LandingMenu menuLinks={headerLinks} />
+      }
 
       {/* Main content */}
       <main>
         <Outlet /> {/* This is where the "children" get rendered */}
       </main>
 
-      {/* Footer */}
-      {/* <LandingFooter /> */}
+      {
+        /* Footer */
+        footerLinks && <LandingFooter footerLinks={footerLinks} />
+      }
     </div>
   );
 };
+
+// eslint-disable-next-line react/display-name
+LandingPage.Simple = (): JSX.Element => <LandingPage />;
+
+// eslint-disable-next-line react/display-name
+LandingPage.WithMenus = (): JSX.Element =>
+  <LandingPage
+    menuLinks={HOMEPAGE_MENU_LINKS}
+    footerLinks={FOOTER_LINKS}
+  />;

@@ -9,11 +9,14 @@ export const PAGE_NAME = "Roomstie";
 export const TARGET_JOBS = "jobs";
 
 export const HOMEPAGE_MENU_LINKS: Readonly<IMenuLink[]> = [
-  // { path: URLS.homepage, label: "Home" },
-  // { path: URLS.team, label: "Meet the team" },
-  // { path: URLS.pricing, label: "Pricing" },
-  // { target: TARGET_JOBS, label: "We're hiring!" },
-  { target: "#", label: "Coming soon" },
+  { path: URLS.home, label: "Home" },
+  { path: URLS.team, label: "Meet the team" },
+  { path: URLS.pricing, label: "Pricing" },
+  { target: TARGET_JOBS, label: "We're hiring!" },
+] as const;
+
+export const COUNTDOWN_MENU_LINKS: Readonly<IMenuLink[]> = [
+  { target: "#", label: "Coming soon", disabled: true },
 ] as const;
 
 export const FOOTER_LINKS: Readonly<IFooterLink[]> = [

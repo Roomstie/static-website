@@ -6,6 +6,12 @@ export type IMenuLink<Recursive extends boolean = true> = {
    * @deprecated NOT SUPPORTED YET (but you get the idea of how this could work)
    */
   children?: Recursive extends true ? IMenuLink[] : never;
+  /**
+   * Disable the link
+   * @optional
+   * @default false
+   */
+  disabled?: boolean;
 } & (
   { url: string; target?: never; path?: never; customPath?: never; } | // External URL
   { target: string; url?: never; path?: never; customPath?: never; } | // Target an element in the page like #about-us
