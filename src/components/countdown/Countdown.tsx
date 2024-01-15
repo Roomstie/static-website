@@ -1,7 +1,5 @@
 import classNames from "classnames";
 import { logoSquare, logoLetters } from "assets";
-// import { logoSquare } from "assets";
-import classNames from "classnames";
 import { paddedZero } from "functions";
 import { useEffect, useState } from "react";
 import { ICountdownClock, ICountdownProps } from "types";
@@ -32,13 +30,10 @@ export const Countdown = ({
   useEffect(() => {
     const interval = setInterval(() => {
       const timerTimeLeft = calculateTimeLeft(targetDate);
-      // if there's still time
       if (timerTimeLeft) {
         setTimeLeft(timerTimeLeft);
       } else {
-        // Timer is over. Clear the timeout
         clearTimeout(interval);
-        // Notify end of time
         onEnd?.();
       }
     }, 1000);
@@ -49,32 +44,39 @@ export const Countdown = ({
   return (
     <div
       className={classNames(
-        "flex flex-col items-center justify-center", // one column, center aligned
+        "flex flex-col items-center justify-center",
         "pt-10",
-        // Add your base classes for the countdown timer here
-        "rounded-lg font-sans justify-center text-center overflow-hidden transition flex items-center",
-        // Add a function to determine the size similar to buttonSizes if needed
+        "rounded-lg font-sans justify-center text-center overflow-hidden transition",
         extraClasses,
       )}
     >
-
       <img
         src={logoSquare.default}
         alt="Main Logo"
         style={{ height: "300px" }}
-      /> {/* Logo image with bottom margin */}
+      />
 
       <img
         src={logoLetters.default}
         alt="Letters Logo"
         style={{ height: "200px", marginTop: '-100px' }}
-        
-      /> 
+      />
+
 
       {
         timeLeft
           ? (
             <div className="flex flex-row space-x-4">
+              {/* "Coming Soon!" box */}
+              <span
+                className="flex flex-col space-y-2 bg-main-purple text-white rounded-xl min-h-24 p-2 justify-center items-center w-52" // Using a Tailwind width class
+              >
+                <span className="text-2xl font-sans font-bold">
+                  Website live in
+                </span>
+              </span>
+
+              {/* Countdown timer */}
               {
                 (Object.keys(timeLeft) as Array<keyof ICountdownClock>).map(interval =>
                   <span
@@ -87,7 +89,7 @@ export const Countdown = ({
                     <span className="text-xl">
                       {interval}
                     </span>
-                  </span>,
+                  </span>
                 )
               }
             </div>
