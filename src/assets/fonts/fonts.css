@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'NirmalaUI';
+    src: url('/src/assets/fonts/nirmala-ui.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  } 
+
+  @font-face {
+    font-family: 'NirmalaUI';
+    src: url('/src/assets/fonts/nirmala-ui-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  } 

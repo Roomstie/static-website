@@ -38,8 +38,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Eudoxus Sans", ...defaultTheme.fontFamily.sans],
+        sans: ["NirmalaUI", "Eudoxus Sans", ...defaultTheme.fontFamily.sans],
       },
+      colors:
+        {
+           "main-purple": "#780095" 
+        }
     },
     colors: {
       black: colors.black,

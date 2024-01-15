@@ -1,5 +1,5 @@
 export * from "./button";
-export * from "./coundown";
+export * from "./countdown";
 export * from "./faq";
 export * from "./generic";
 export * from "./landing";
